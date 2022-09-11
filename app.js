@@ -31,20 +31,30 @@ const updatePage = async () => {
   // TODO: Use either `map` and/or `filter` to extract some data from the array of fruit objects
   // For example, find "name of all fruits whose sugar > 15",
 
-  // TODO: Create a new HTML element to display your data
+  const sugarArray = fruitsArray.filter((item) => { return item.nutritions.sugar > 15; })
+  const mapped = sugarArray.map((item) => { return item.name })
+
+
+
+
+  // Create a new HTML element to display your data
+  // const newElement = document.createElement('sugar fruits');
+  // newElement.innerHTML = sugarArray[i];
+
 
   // TODO: Append your new element to the page
+  exampleAddElement(mapped);
 
 }
 
 // SAMPLE CODE of how to create and append a new HTML element to the page
-const exampleAddElement = () => {
+const exampleAddElement = (array) => {
   // Create a new HTML element and set its properties
   const newElement = document.createElement('div');
-  newElement.innerHTML = "this text is inside a div";
+  newElement.innerHTML = array;
 
   // Append the new element to an existing part of the webpage
-  const existingElement = document.getElementById('example-id');
+  const existingElement = document.getElementById('cs1300-gallery');
   existingElement.append(newElement);
 }
 
